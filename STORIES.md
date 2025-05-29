@@ -12,6 +12,7 @@
 - As a user, I want to see a list of my favorited books, so I can keep track of what I want to read.
 - As a user, I want to unfavorite a book, so I can remove it from my reading list.
 
+
 # เรื่องราวของผู้ใช้ (User Stories) สำหรับ ReadListE2E
 
 ## มุมมองแค็ตตาล็อก (Catalog View)
