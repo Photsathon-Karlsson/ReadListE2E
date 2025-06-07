@@ -1,4 +1,5 @@
 // Test to check if a new book can be added and shown in the catalog.
+
 import { test, expect } from "@playwright/test";
 
 test("should add a new book and display it in the catalog", async ({ page }) => {
