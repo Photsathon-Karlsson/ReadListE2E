@@ -6,7 +6,7 @@
 
 ## Add Book View
 - As an admin, I want to add a new book with title, author, and description, so that it appears in the catalog.
-- As an admin, I want to see a confirmation that the book was added successfully.
+
 
 ## My Books View
 - As a user, I want to see a list of my favorited books, so I can keep track of what I want to read.
@@ -21,7 +21,6 @@
 
 ## มุมมองเพิ่มหนังสือ (Add Book View)
 - ในฐานะผู้ดูแลระบบ ฉันต้องการเพิ่มหนังสือใหม่พร้อมชื่อหนังสือ ผู้แต่ง และคำอธิบาย เพื่อให้หนังสือแสดงในแค็ตตาล็อก
-- ในฐานะผู้ดูแลระบบ ฉันต้องการเห็นข้อความยืนยันเมื่อเพิ่มหนังสือสำเร็จ เพื่อให้รู้ว่าการเพิ่มสำเร็จแล้ว
 
 ## มุมมองหนังสือของฉัน (My Books View)
 - ในฐานะผู้ใช้ ฉันต้องการเห็นรายการหนังสือที่ฉันกดเป็นรายการโปรดไว้ เพื่อจะได้ติดตามสิ่งที่ฉันอยากอ่าน
