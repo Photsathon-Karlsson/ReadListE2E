@@ -20,6 +20,8 @@ test("get started link", async ({ page }) => {
 });
 
 // เห็นรายการหนังสือที่ฉันกดเป็นรายการโปรด
+
+
 test("faverite book", async ({ page }) => {
     await page.goto("https://tap-ht24-testverktyg.github.io/exam-template/");
 
@@ -36,7 +38,5 @@ test("faverite book", async ({ page }) => {
     await expect(FavBook).toBeVisible();
 
     
-    
-
-
 });
+
