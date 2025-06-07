@@ -1,6 +1,4 @@
 // Catalog View Tests
-// - As a visitor, I want to see a list of available books, so that I can browse for something to read.
-// - As a user, I want to be able to favorite a book from the catalog view, so that I can add it to my reading list.
 
 import { test, expect } from "@playwright/test";
 
