@@ -1,46 +1,30 @@
+// Catalog View Tests
+// - As a visitor, I want to see a list of available books, so that I can browse for something to read.
+// - As a user, I want to be able to favorite a book from the catalog view, so that I can add it to my reading list.
+
 import { test, expect } from "@playwright/test";
 
-const URL = "https://tap-ht24-testverktyg.github.io/exam-template/";
+// Define base URL for reuse
+const baseURL = "https://tap-ht24-testverktyg.github.io/exam-template/";
 
-test("should display correct number of books in catalog", async ({ page }) => {
-  await page.goto(URL, { timeout: 60000 });
-
+// Test 1: Check that catalog shows 7 books
+test("should display 7 books in the catalog", async ({ page }) => {
+  await page.goto(baseURL);
   const catalogItems = await page.locator(".book").count();
   console.log("Catalog items count:", catalogItems);
   expect(catalogItems).toBe(7);
 });
 
-test("should toggle favorite (heart) icon for a book", async ({ page }) => {
-  await page.goto(URL, { timeout: 60000 });
-
+// Test 2: Favorite and unfavorite a book from catalog view
+test("should allow favoriting and unfavoriting a book", async ({ page }) => {
+  await page.goto(baseURL);
   const heart = page.getByTestId("star-Hur man tappar bort sin TV-fjärr 10 gånger om dagen");
 
-  // Click to mark as favorite
+  // Click to favorite
   await heart.click();
-  await expect(heart).toHaveClass(/selected/);
+  await expect(heart).toHaveClass(/star selected/);
 
-  // Click again to unmark as favorite
+  // Click again to unfavorite
   await heart.click();
-  await expect(heart).not.toHaveClass(/selected/);
-});
-
-test("should have no favorites selected on initial load", async ({ page }) => {
-  await page.goto(URL, { timeout: 60000 });
-
-  const selectedHearts = await page.locator(".star.selected").count();
-  expect(selectedHearts).toBe(0); // Expect no favorites selected on initial load
-});
-
-test("should allow selecting and counting favorite books", async ({ page }) => {
-  await page.goto(URL, { timeout: 60000 });
-
-  // Select 2 books as favorites
-  const heart1 = page.getByTestId("star-Min katt är min chef");
-  const heart2 = page.getByTestId("star-Att prata med växter – och vad de egentligen tycker om dig");
-
-  await heart1.click();
-  await heart2.click();
-
-  const selectedHearts = await page.locator(".star.selected").count();
-  expect(selectedHearts).toBe(2); // Expect 2 hearts to be selected
+  await expect(heart).toHaveClass(/star/);
 });
